@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'test_gem'
+
+puts "test_gem script executing"
+puts ARGV[0]
+
+puts TestGem::MyFile.first( ARGV[0] )
