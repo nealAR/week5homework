@@ -7,7 +7,6 @@ puts ARGV[0]
 puts "Here!"
 if ARGV[0] == "--init" 
 	TestGem::init_config
-	puts "Here!"
 else
 	begin
 		counter = 1
