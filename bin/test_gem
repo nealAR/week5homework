@@ -4,5 +4,20 @@ require 'test_gem'
 
 puts "test_gem script executing"
 puts ARGV[0]
+puts "Here!"
+if ARGV[0] == "--init" 
+	TestGem::init_config
+	puts "Here!"
+else
+	begin
+		counter = 1
+		file = File.new("program.config", "r")
+		while (line = file.gets)
+			puts "#{counter}: #{line}"	
+			counter += 1
+		end	
+	rescue
+	  raise TestGem::MyFile.MyError
+	end	
+end
 
-puts TestGem::MyFile.first( ARGV[0] )

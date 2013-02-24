@@ -6,7 +6,12 @@ describe TestGem do
 
 	context 'instance' do
 
-  		it { should be_a Module }
+	    it {should be_a Module}	
+
+  		it 'creates a config file' do
+  		  subject.init_config
+  		  File.open("program.config", "r") { |io| io.readline }.should eq "---\n"	
+  		end	
 
   	 end
 
